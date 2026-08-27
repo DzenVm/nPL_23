@@ -22,7 +22,7 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://twoja-domena-tutaj.pl";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://twoja-domena-tutaj.pl";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
