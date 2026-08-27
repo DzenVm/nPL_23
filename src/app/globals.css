@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-fraunces), "Iowan Old Style", ui-serif, serif;
+  --font-body: var(--font-literata), "Charter", ui-serif, Georgia, serif;
+  --font-label: var(--font-space-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  --color-parchment-50: #fbf7ee;
+  --color-parchment-100: #f4ecd8;
+  --color-parchment-200: #e8dcbd;
+  --color-parchment-300: #d9c69a;
+  --color-parchment-400: #c2a86e;
+  --color-ink-900: #241c14;
+  --color-ink-800: #322616;
+  --color-ink-700: #453220;
+  --color-ink-600: #5a4128;
+  --color-moss-500: #4c6b45;
+  --color-moss-600: #3c5637;
+  --color-moss-700: #2e4329;
+  --color-rust-500: #a4522b;
+  --color-rust-600: #883f20;
+  --color-brass-400: #b8873a;
+  --color-brass-500: #9c6f2a;
+
+  --shadow-etched: 0 1px 0 rgba(36, 28, 20, 0.06), 0 8px 24px -12px rgba(36, 28, 20, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-parchment-100);
+  color: var(--color-ink-800);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-brass-400);
+  color: var(--color-ink-900);
+}
+
+.texture-paper {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(36, 28, 20, 0.05), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(36, 28, 20, 0.04), transparent 45%),
+    repeating-linear-gradient(
+      100deg,
+      rgba(36, 28, 20, 0.015) 0px,
+      rgba(36, 28, 20, 0.015) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+}
+
+.border-etched {
+  border: 1px solid var(--color-ink-900);
+  box-shadow: 3px 3px 0 var(--color-ink-900);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: reveal-up 0.6s ease-out both;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
