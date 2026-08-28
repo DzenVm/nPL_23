@@ -12,14 +12,11 @@ export default function ContactPage() {
       <p>
         W sprawach związanych z działaniem gry, zgłoszeniem błędu, pytaniami
         dotyczącymi zakupów opcjonalnych lub kwestiami związanymi z danymi
-        osobowymi, najlepiej pisać bezpośrednio na adres kontaktowy
-        przypisany do tej domeny — zostanie on uzupełniony po jej
-        skonfigurowaniu.
-      </p>
-      <p>
-        Do czasu podpięcia docelowej domeny i skrzynki pocztowej ta strona
-        pełni funkcję zapowiedzi — pełne dane kontaktowe pojawią się tutaj
-        wraz z uruchomieniem finalnej wersji.
+        osobowymi, najlepiej pisać na adres{" "}
+        <a href="mailto:kontakt@saobey.pro" className="underline decoration-brass-400 underline-offset-4 hover:text-ink-900">
+          kontakt@saobey.pro
+        </a>
+        .
       </p>
       <p>
         Zgłoszenia dotyczące błędów technicznych warto uzupełnić o informację,
