@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test:tds": "vitest run tests/tds",
+    "test:tds:bundle": "node scripts/check-client-bundle.mjs",
+    "test:tds:foundation": "node scripts/check-clean-foundation.mjs"
   },
   "dependencies": {
     "next": "16.3.3",
@@ -21,6 +24,10 @@
     "eslint": "^9.18.0",
     "eslint-config-next": "16.3.3",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "vitest": "3.2.6"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }
