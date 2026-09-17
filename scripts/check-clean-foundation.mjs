@@ -69,8 +69,24 @@ assert.doesNotMatch(
   "server-side TDS integration referenced from browser code",
 );
 
+const proxyFiles = (
+  await Promise.all(
+    [path.join(root, "proxy.ts"), path.join(root, "src", "proxy.ts")].map(
+      async (file) => {
+        try {
+          await access(file);
+          return file;
+        } catch {
+          return null;
+        }
+      },
+    ),
+  )
+).filter((file) => file !== null);
+assert.equal(proxyFiles.length, 1, "exactly one Next.js proxy file is required");
+
 const routingFiles = [
-  path.join(root, "proxy.ts"),
+  ...proxyFiles,
   ...(await collectFiles(path.join(root, "lib", "tds"))),
 ];
 const routingCorpus = (
